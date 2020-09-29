@@ -1,8 +1,14 @@
 import React from "react";
 import { Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 const Navbar = () => {
+    const history = useHistory();
+  const handleClick = () => {
+    let name ="petar";
+    let url = "blabla";
+    history.push(`/templates/${name}/${url}`)
+  }
 
   return (
     <div>
@@ -12,7 +18,7 @@ const Navbar = () => {
         </Dropdown.Toggle>
         <Dropdown.Menu>
           <Link to="/">Home</Link>
-          <Link to="/templates">Templates</Link>
+          <Link onClick={()=> handleClick()}>Templates</Link>
         </Dropdown.Menu>
       </Dropdown>
     </div>

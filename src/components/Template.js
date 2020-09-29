@@ -1,7 +1,14 @@
 import React from "react";
 import StaticData from '../utils/StaticData'
 import '../styles/style.css'
-const Template = (props) => {
+import { Link,useHistory, useParams} from "react-router-dom";
+
+const Template = () => {
+
+  const { name } = useParams();
+  const {url} = useParams();
+  console.log(name,url);
+  
   const templates = StaticData.map((item) => <div key={item.id}>{item.templateBody}</div>)
   return (
     <div>
