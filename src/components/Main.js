@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import QrCode from 'qrcode.react'
 
 const Main = () => {
   const [name, setName] = useState(() => {
@@ -30,7 +31,7 @@ const Main = () => {
         value={website}
         onChange={(event) => setWebsite(event.target.value)}
       />
-      <div>QR Code</div>
+      <div>{localStorage.getItem("restaurantWebsite") ? <QrCode value={localStorage.getItem("restaurantWebsite")}/> : ""}</div>
       <button>PRINT</button>
     </div>
   );

@@ -8,3 +8,7 @@
     margin: 1%;
     width: 29.3%;
 }
+a {
+    display: block;
+    text-align: center;
+}
