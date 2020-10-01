@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import OneTemplate from "./components/OneTemplate";
-import { Route, BrowserRouter , Switch} from "react-router-dom";
+import { Route, BrowserRouter} from "react-router-dom";
 import Template from "./components/Template";
 import "./App.css";
 const routes = [

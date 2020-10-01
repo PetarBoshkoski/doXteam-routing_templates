@@ -4,31 +4,18 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
+import { Provider } from "react-redux";
+import allReducers from "./reducers";
 
-const reducer = (state = 0, action) => {
-  switch (action.type) {
-    case "TESTACTION":
-      return state + 5;
-    default:
-      return state;
-  }
-};
-
-const testAction = () => {
-  return {
-    type: "TESTACTION",
-  };
-};
-
-const store = createStore(reducer);
-store.dispatch({ type: "TESTACTION" });
-
-console.log(store.getState());
+const store = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 

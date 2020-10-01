@@ -6,6 +6,8 @@ export const FlexContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #fff;
+  opacity: 0.7;
   font-size: 2.1vw;
   height: 500px;
   border: 1px solid black;
@@ -28,7 +30,7 @@ export const Menus = styled.div`
   bottom: ${(props) => props.bottom};
   left: ${(props) => props.left};
   word-wrap: break-word;
-  font-family: 'Merriweather';
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
   background-color: rgb(255, 255, 255);
   background-image: ${(props) => `url(${props.backgroundimage})`};
