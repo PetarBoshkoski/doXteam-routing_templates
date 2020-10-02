@@ -23,7 +23,7 @@ const Main = () => {
         value={url}
         onChange={(event) => dispatch(updateUrl(event.target.value))}
       />
-      <div>{qrcode ? <QrCode value={qrcode} /> : ""}</div>
+      <div>{qrcode ? <QrCode value={qrcode} size={200} /> : ""}</div>
       {/* <button>PRINT</button> */}
     </div>
   );

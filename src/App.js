@@ -2,22 +2,27 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 import OneTemplate from "./components/OneTemplate";
-import { Route, BrowserRouter} from "react-router-dom";
+import { Route, BrowserRouter } from "react-router-dom";
 import Template from "./components/Template";
+import CreateTemplate from "./components/CreateTemplate";
 import "./App.css";
 const routes = [
   {
-    path: '/',
-    component: Main
+    path: "/",
+    component: Main,
   },
   {
-    path: '/templates',
-    component: Template
+    path: "/templates",
+    component: Template,
   },
   {
-    path: '/templates/:id',
-    component: OneTemplate
-  }
+    path: "/templates/:id",
+    component: OneTemplate,
+  },
+  {
+    path: "/create-template",
+    component: CreateTemplate,
+  },
 ];
 function App() {
   return (
@@ -26,7 +31,12 @@ function App() {
         <Navbar />
 
         {routes.map((route) => (
-          <Route key={route.path} exact path={route.path} component={route.component}/>
+          <Route
+            key={route.path}
+            exact
+            path={route.path}
+            component={route.component}
+          />
         ))}
       </BrowserRouter>
     </div>
