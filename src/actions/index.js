@@ -39,3 +39,10 @@ export const updateTemplateURL = (url) => {
         payload: url
     }
 }
+
+export const updateTemplateBgColor = (color) => {
+    return {
+        type: 'CREATETEMPLATE_BGCOLOR',
+        payload: color
+    }
+}

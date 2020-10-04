@@ -4,6 +4,7 @@ import WebsiteQrCode from "./WebsiteQrCode";
 import TemplateName from './create_template/TemplateName'
 import TemplateLogo from './create_template/TemplateLogo'
 import TemplateURL from './create_template/TemplateURL'
+import TemplateBgColor from './create_template/TemplateBgColor'
 import { combineReducers } from "redux";
 
 const allReducers = combineReducers({
@@ -12,7 +13,8 @@ const allReducers = combineReducers({
   websiteQrCode: WebsiteQrCode,
   createTemplateName: TemplateName,
   createTemplateLogo: TemplateLogo,
-  createTemplateUrl: TemplateURL
+  createTemplateUrl: TemplateURL,
+  createTemplateBgColor: TemplateBgColor
 });
 
 export default allReducers;

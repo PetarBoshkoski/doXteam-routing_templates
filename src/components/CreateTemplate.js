@@ -1,18 +1,19 @@
 import React from "react";
 import { FlexContainer, Menus, StyledImg } from "../styles/templates_styling";
 import { useSelector, useDispatch } from "react-redux";
-import { updateTemplateName, updateTemplateLogo, updateTemplateURL } from "../actions/index";
+import { updateTemplateName, updateTemplateLogo, updateTemplateURL, updateTemplateBgColor } from "../actions/index";
 
 const CreateTemplate = () => {
   const name = useSelector((state) => state.createTemplateName);
   const logo = useSelector((state) => state.createTemplateLogo);
   const url = useSelector((state) => state.createTemplateUrl);
+  const bgColor = useSelector((state) => state.createTemplateBgColor)
   const dispatch = useDispatch();
   return (
     <div>
       <div className="left-sidebar">
         <div className="chosen-template">
-          <FlexContainer>
+          <FlexContainer bgColor={bgColor}>
             <Menus top="5%" left="10%" right="10%" width="80%">
               <div className="create-template-name">{name}</div>
             </Menus>
@@ -41,6 +42,7 @@ const CreateTemplate = () => {
             onChange={(event) => dispatch(updateTemplateLogo(event.target.value))}
           />
           <input type="text" placeholder="Your company wesbite" onChange={(event) => dispatch(updateTemplateURL(event.target.value))}/>
+          <input type="text" placeholder="Enter template background color" onChange={(event) => console.log(dispatch(updateTemplateBgColor(event.target.value)))}/>
         </div>
       </div>
     </div>

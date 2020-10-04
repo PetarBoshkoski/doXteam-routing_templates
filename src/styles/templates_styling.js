@@ -6,7 +6,7 @@ export const FlexContainer = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #fff;
+  background-color: ${(props) => props.bgColor};
   opacity: 0.7;
   font-size: 2.1vw;
   height: 500px;

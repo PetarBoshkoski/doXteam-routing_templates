@@ -6,8 +6,9 @@ import QrCode from 'qrcode.react'
 const SingleTemplate = () => {
   const name = useSelector((state) => state.websiteName);
   const url = useSelector((state) => state.websiteUrl);
+  const color = '#fff';
   return (
-    <FlexContainer>
+    <FlexContainer bgColor={color}>
       <Menus top="5%" left="10%" right="10%" width="80%">
         {name}
       </Menus>
