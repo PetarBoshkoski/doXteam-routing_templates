@@ -46,3 +46,10 @@ export const updateTemplateBgColor = (color) => {
         payload: color
     }
 }
+
+export const updateTemplateRender = (template) => {
+    return {
+        type: 'TEMPLATE_RENDER',
+        payload: template
+    }
+}

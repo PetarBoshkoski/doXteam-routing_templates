@@ -21,6 +21,7 @@ const Navbar = () => {
           <Link to="/">Home</Link>
           <Link to="/templates">Templates</Link>
           <Link to="/create-template">Create template</Link>
+          <Link to="/import-template">Import template</Link>
         </Dropdown.Menu>
       </Dropdown>
     </div>

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <h1 id='companyName'></h1>
+    <h1 id='companyUrl'></h1>
+  </head>
+  <body>
+  </body>
+</html>

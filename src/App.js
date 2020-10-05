@@ -5,6 +5,7 @@ import OneTemplate from "./components/OneTemplate";
 import { Route, BrowserRouter } from "react-router-dom";
 import Template from "./components/Template";
 import CreateTemplate from "./components/CreateTemplate";
+import ImportTemplate from "./components/ImportTemplate"
 import "./App.css";
 const routes = [
   {
@@ -23,6 +24,10 @@ const routes = [
     path: "/create-template",
     component: CreateTemplate,
   },
+  {
+    path: "/import-template",
+    component: ImportTemplate,
+  }
 ];
 function App() {
   return (
