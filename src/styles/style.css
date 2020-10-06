@@ -1,6 +1,5 @@
 body {
   background: url("https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
-  background-position: center;
   background-size: cover;
 }
 .templates-container {
@@ -49,6 +48,7 @@ input[type="text"] {
   margin-top: 15px;
   border-radius: 10px;
   color: #fff;
+  word-wrap: break-word;
 }
 .save-button:hover {
   background-color: #fff;

@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateTemplateRender } from '../actions/index'
+ 
 const ImportTemplate = () => {
   const dispatch = useDispatch();
+  const templateRender = useSelector((state) => state.templateRender); 
   return (
     <div className="import-template">
       <div>
@@ -12,6 +14,7 @@ const ImportTemplate = () => {
         </h1>
         <textarea
           onChange={(event) => dispatch(updateTemplateRender(event.target.value))}
+          value={templateRender}
         ></textarea>
       </div>
       <Link to="create-template" className="save-button">

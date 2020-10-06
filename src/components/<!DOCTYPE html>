@@ -2,9 +2,11 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <h1 id='companyName'></h1>
-    <h1 id='companyUrl'></h1>
   </head>
   <body>
+    <h1 id='companyName' style="
+    height: 100px;
+    background-color: red;"></h1>
+    <div id='companyQrCode'></div>
   </body>
 </html>
