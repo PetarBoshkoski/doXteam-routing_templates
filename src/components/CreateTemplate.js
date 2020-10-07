@@ -1,5 +1,4 @@
 import React from "react";
-import { FlexContainer } from "../styles/templates_styling";
 import { useSelector, useDispatch } from "react-redux";
 import {
   updateTemplateName,
@@ -7,24 +6,41 @@ import {
   updateTemplateURL,
   updateTemplateBgColor,
 } from "../actions/index";
-import QrCode from 'qrcode.react'
-import ImportRender from './ImportRender'
+import QrCode from "qrcode.react";
+import ImportRender from "./ImportRender";
+import ReactHtmlParser from "react-html-parser";
 
 const CreateTemplate = () => {
   const name = useSelector((state) => state.createTemplateName);
-  const logo = useSelector((state) => state.createTemplateLogo);
+  // const logo = useSelector((state) => state.createTemplateLogo);
   const url = useSelector((state) => state.createTemplateUrl);
-  const bgColor = '#fff';
-  const templateRender = useSelector((state) => state.templateRender);  
-  const dispatch = useDispatch();
+  const bgColor = "#fff";
+  const templateRender = useSelector((state) => state.templateRender);
+  const importedTemplate = ReactHtmlParser(templateRender);
 
+  const iterateObject = (obj) => {
+    for (let prop in obj) {
+      if (typeof(obj[prop]) == "object") {
+        console.log(obj.constructor)
+      }
+    }
+  };
+  importedTemplate.filter((item) => iterateObject(item));
+
+  // useEffect(() => {
+  //   iterateObject(importedTemplate)
+  // }, [templateRender])
+  // let companyName = ReactHtmlParser(templateRender).map((item) => item.type === 'body' && item.props.id === 'companyName' ? JSON.stringify(item.props.children).concat(name) : '')
+  // let companyWebsite = ReactHtmlParser(templateRender).map((item) => item.props.id === 'companyWebsite' ? JSON.stringify(item.props.children).concat(url) : '')
+  // let h1style = ReactHtmlParser(templateRender).map((item) => item.props.style)
+  const dispatch = useDispatch();
   return (
     <div>
       <div className="left-sidebar">
         <div className="chosen-template">
-
-            <ImportRender name={name} qrcode={url ? <QrCode value={url}/> : ''}/>
-
+          <ImportRender
+          // name={companyName} website={companyWebsite} h1style={h1style}
+          />
         </div>
       </div>
       <div className="right-sidebar">

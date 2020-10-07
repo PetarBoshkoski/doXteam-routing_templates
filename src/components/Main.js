@@ -1,5 +1,4 @@
-import React, { useRef } from "react";
-import QrCode from "qrcode.react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateName } from "../actions";
 import { updateUrl } from "../actions";

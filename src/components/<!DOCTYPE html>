@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8">
   </head>
+  <style>
+    h1 {
+      background-color: red;
+    }
+  </style>
   <body>
-    <h1 id='companyName' style="
-    height: 100px;
-    background-color: red;"></h1>
+    <h1id='companyName'></h1>
     <div id='companyQrCode'></div>
+    <h1 id='companyWebsite'></h1>
+    
   </body>
 </html>

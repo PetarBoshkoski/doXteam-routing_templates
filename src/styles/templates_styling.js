@@ -32,7 +32,7 @@ export const Menus = styled.div`
   word-wrap: break-word;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bold;
-  background-color: rgb(255, 255, 255);
+  background-color: ${(props) => props.h1style};
   background-image: ${(props) => `url(${props.backgroundimage})`};
 `;
 
