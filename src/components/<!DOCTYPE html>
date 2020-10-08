@@ -9,9 +9,17 @@
     }
   </style>
   <body>
-    <h1id='companyName'></h1>
-    <div id='companyQrCode'></div>
-    <h1 id='companyWebsite'></h1>
-    
+    <h1 id='companyName'>AAA</h1>
+    <div><p>dasda</p></div>
+    <div id='companyQrCode'>222222</div>
+    <h1 id='companyWebsite'>333</h1>
+    <table>
+    <tr>
+    <td>1</td>
+    <td>2</td>
+    <td>3</td>
+    <td>4</td>
+    </tr>
+    </table>
   </body>
 </html>

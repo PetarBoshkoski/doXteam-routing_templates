@@ -23,6 +23,7 @@ a {
   font-size: 18px;
   color: rgb(25, 31, 25);
 }
+
 a:hover {
   text-decoration: none;
   list-style: none;
