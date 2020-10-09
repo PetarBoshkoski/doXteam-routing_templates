@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   updateTemplateName,
@@ -14,7 +14,7 @@ import uuid from "react-uuid";
 const CreateTemplate = () => {
   const name = useSelector((state) => state.createTemplateName);
   // const logo = useSelector((state) => state.createTemplateLogo);
-  const [companyName, setCompanyName] = useState('')
+  const [companyName, setCompanyName] = useState("");
   const url = useSelector((state) => state.createTemplateUrl);
   const bgColor = "#fff";
   const templateRender = useSelector((state) => state.templateRender);
@@ -22,10 +22,26 @@ const CreateTemplate = () => {
 
   const data = importedTemplate.map((item) => <div key={uuid()}>{item}</div>);
 
-  useEffect(()=>{
-    let companyName = document && document.getElementById('companyName') && document.getElementById('companyName').textContent
-    setCompanyName(companyName ? companyName.concat(name) : companyName)
-  })
+  useEffect(() => {
+    searchObject(importedTemplate);
+  });
+  const searchObject = (obj) => {
+    obj.map((item) => {
+      if (item.type !== "style") {
+        console.log("Ovde e body");
+        for (const val of Object.values(item.props) &&
+          Object.values(item.props.children)) {
+          console.log(val);
+          if (val && Object.values(val.props) && Object.values(val.props)) {
+          } else {
+          }
+        }
+        //[0].props.children
+      } else {
+        console.log("Ova ne e body");
+      }
+    });
+  };
 
   // console.log(importedTemplate.find(x => x.props.children.type == 'h1'))
   // useEffect(() => {
@@ -38,10 +54,7 @@ const CreateTemplate = () => {
     <div>
       <div className="left-sidebar">
         <div className="chosen-template">
-          <ImportRender
-            data={data}
-            name={companyName}
-          />
+          <ImportRender data={data} name={companyName} />
         </div>
       </div>
       <div className="right-sidebar">
