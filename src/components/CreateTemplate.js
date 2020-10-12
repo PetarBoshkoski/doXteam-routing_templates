@@ -12,49 +12,29 @@ import ReactHtmlParser from "react-html-parser";
 import uuid from "react-uuid";
 
 const CreateTemplate = () => {
+  const cl = console.log;
   const name = useSelector((state) => state.createTemplateName);
   // const logo = useSelector((state) => state.createTemplateLogo);
-  const [companyName, setCompanyName] = useState("");
   const url = useSelector((state) => state.createTemplateUrl);
   const bgColor = "#fff";
   const templateRender = useSelector((state) => state.templateRender);
-  const importedTemplate = ReactHtmlParser(templateRender);
+  // const importedTemplate = ReactHtmlParser(templateRender);
+  
 
-  const data = importedTemplate.map((item) => <div key={uuid()}>{item}</div>);
+  const generateTemplate = ()=>{
+    let ret = templateRender.replace('{{companyName}}', name);
+    return {__html: ret};
+  }
+  const data = <div dangerouslySetInnerHTML={generateTemplate()}></div>
 
-  useEffect(() => {
-    searchObject(importedTemplate);
-  });
-  const searchObject = (obj) => {
-    obj.map((item) => {
-      if (item.type !== "style") {
-        console.log("Ovde e body");
-        for (const val of Object.values(item.props) &&
-          Object.values(item.props.children)) {
-          console.log(val);
-          if (val && Object.values(val.props) && Object.values(val.props)) {
-          } else {
-          }
-        }
-        //[0].props.children
-      } else {
-        console.log("Ova ne e body");
-      }
-    });
-  };
 
-  // console.log(importedTemplate.find(x => x.props.children.type == 'h1'))
-  // useEffect(() => {
-  //   iterateObject(importedTemplate)
-  // }, [templateRender])
-
-  // let companyWebsite = ReactHtmlParser(templateRender).map((item) => item.props.id === 'companyWebsite' ? JSON.stringify(item.props.children).concat(url) : '')
+  
   const dispatch = useDispatch();
   return (
     <div>
       <div className="left-sidebar">
         <div className="chosen-template">
-          <ImportRender data={data} name={companyName} />
+          <ImportRender data={data}/>
         </div>
       </div>
       <div className="right-sidebar">
