@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   updateTemplateName,
@@ -6,35 +6,41 @@ import {
   updateTemplateURL,
   updateTemplateBgColor,
 } from "../actions/index";
-import QrCode from "qrcode.react";
 import ImportRender from "./ImportRender";
-import ReactHtmlParser from "react-html-parser";
-import uuid from "react-uuid";
+import QrCode from "qrcode.react";
 
 const CreateTemplate = () => {
-  const cl = console.log;
   const name = useSelector((state) => state.createTemplateName);
   // const logo = useSelector((state) => state.createTemplateLogo);
   const url = useSelector((state) => state.createTemplateUrl);
   const bgColor = "#fff";
   const templateRender = useSelector((state) => state.templateRender);
-  // const importedTemplate = ReactHtmlParser(templateRender);
-  
 
-  const generateTemplate = ()=>{
-    let ret = templateRender.replace('{{companyName}}', name);
-    return {__html: ret};
-  }
-  const data = <div dangerouslySetInnerHTML={generateTemplate()}></div>
+  let qrcode = url ? <QrCode value={url} id="canvas" /> : "";
 
+  let propertiesToReplace = {
+    "{{companyName}}": name,
+    "{{companyWebsite}}": url,
+    // "{{qrCode}}": console.log(qrcode.url),
+  };
+  // useEffect(() => {
+  //   generateTemplate();
+  // });
+  // const generateTemplate = () => {
+  //   let ret = templateRender;
+  //   for (let [key, value] of Object.entries(propertiesToReplace)) {
+  //     ret = ret.replace(key, value);
+  //   }
+  //   return { __html: ret };
+  // };
 
-  
+  // const data = <div dangerouslySetInnerHTML={generateTemplate()}></div>;
   const dispatch = useDispatch();
   return (
     <div>
       <div className="left-sidebar">
         <div className="chosen-template">
-          <ImportRender data={data}/>
+          <ImportRender />
         </div>
       </div>
       <div className="right-sidebar">
