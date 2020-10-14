@@ -14,27 +14,6 @@ const CreateTemplate = () => {
   // const logo = useSelector((state) => state.createTemplateLogo);
   const url = useSelector((state) => state.createTemplateUrl);
   const bgColor = "#fff";
-  const templateRender = useSelector((state) => state.templateRender);
-
-  let qrcode = url ? <QrCode value={url} id="canvas" /> : "";
-
-  let propertiesToReplace = {
-    "{{companyName}}": name,
-    "{{companyWebsite}}": url,
-    // "{{qrCode}}": console.log(qrcode.url),
-  };
-  // useEffect(() => {
-  //   generateTemplate();
-  // });
-  // const generateTemplate = () => {
-  //   let ret = templateRender;
-  //   for (let [key, value] of Object.entries(propertiesToReplace)) {
-  //     ret = ret.replace(key, value);
-  //   }
-  //   return { __html: ret };
-  // };
-
-  // const data = <div dangerouslySetInnerHTML={generateTemplate()}></div>;
   const dispatch = useDispatch();
   return (
     <div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import { Link } from "react-router-dom";
-import '../styles/style.css';
+import "../styles/style.css";
 const Navbar = () => {
   //   const history = useHistory();
   // const handleClick = () => {
@@ -14,9 +14,10 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <Dropdown>
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
-          
-        </Dropdown.Toggle>
+        <Dropdown.Toggle
+          variant="success"
+          id="dropdown-basic"
+        ></Dropdown.Toggle>
         <Dropdown.Menu>
           <Link to="/">Home</Link>
           <Link to="/templates">Templates</Link>
